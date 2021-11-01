@@ -63,6 +63,12 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 15+14+7)
 
+    def test_partida_con_strike_spare_seguidos(self):
+        partida = Bolos()
+        ronda = [(10, 0), (5, 5), (6, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 20+16+9)
+
 
 
 
