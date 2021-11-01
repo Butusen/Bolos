@@ -75,6 +75,14 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 20 + 20 + 13+4)
 
+    def test_partida_ronda_extra_strike(self):
+        partida = Bolos()
+        ronda = [(5, 0), (4, 1), (10, 0), (1, 0), (4, 1), (1, 0), (1, 0), (1, 0), (1, 0), (10, 0), (5, 4)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 5+5+11+1+5+1+1+1+1+19+9)
+
+
+
 
 
 
