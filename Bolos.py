@@ -2,10 +2,10 @@ class Bolos:
 
     def calcularpuntuacion(self,ronda):
         suma = 0
-        for i in ronda:
-            valor1= i[0]
-            valor2=i[1]
-            suma = suma + valor1 +valor2
+        for i in range(0, len(ronda)):
+            if ronda[i] [0] == 10:
+                suma = suma + sum(ronda[i]) + sum(ronda[i+1])
+            else:    suma = suma + sum(ronda[i])
         return suma
 
 
