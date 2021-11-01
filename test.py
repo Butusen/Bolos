@@ -34,6 +34,11 @@ class MyTestCase(unittest.TestCase):
         ronda = [(10, 0), (2, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 14)
+    def test_partida_con_dos_strikes_separados(self):
+        partida = Bolos()
+        ronda = [(10, 0), (2, 0), (10, 0), (2, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 12+2+13+3)
 
 
 
