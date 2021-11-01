@@ -57,6 +57,12 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 12+3+14+7)
 
+    def test_partida_con_dos_spare_juntos(self):
+        partida = Bolos()
+        ronda = [(4, 6), (5, 5), (4, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 15+14+7)
+
 
 
 
