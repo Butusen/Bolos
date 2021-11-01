@@ -75,13 +75,19 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 26+20+15+6)
 
+    def test_partida_con_spare_strike_spare(self):
+        partida = Bolos()
+        ronda = [(5, 5), (10, 0), (6, 4), (3, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 20 + 20 + 13+4)
+
+    def test_partida_con_cinco_strikes_juntos(self):
+        partida = Bolos()
+        ronda = [(10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (2, 1), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 30+30+30+22+13+3)
 
 
-  #  def test_partida_con_spare_strike_spare(self):
-   #     partida = Bolos()
-    #    ronda = [(5, 5), (10, 0), (6, 4), (3, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-     #   resultado = partida.calcularpuntuacion(ronda)
-      #  self.assertEqual(resultado, 20 + 20 + 13+4)
 
 
 
