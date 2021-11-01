@@ -45,29 +45,37 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 22+13+3+3)
 
-    #def test_partida_con_spare(self):
-        #partida = Bolos()
-       # ronda = [(4, 6), (2, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-      #  resultado = partida.calcularpuntuacion(ronda)
-     #   self.assertEqual(resultado, 12+3)
+    def test_partida_con_spare(self):
+        partida = Bolos()
+        ronda = [(4, 6), (2, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 12+3)
 
-    #def test_partida_con_dos_spare_separados(self):
-        #partida = Bolos()
-       # ronda = [(4, 6), (2, 1), (5, 5), (4, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-      #  resultado = partida.calcularpuntuacion(ronda)
-     #   self.assertEqual(resultado, 12+3+14+7)
+    def test_partida_con_dos_spare_separados(self):
+        partida = Bolos()
+        ronda = [(4, 6), (2, 1), (5, 5), (4, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 12+3+14+7)
 
-    #def test_partida_con_dos_spare_juntos(self):
-        #partida = Bolos()
-       # ronda = [(4, 6), (5, 5), (4, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-      #  resultado = partida.calcularpuntuacion(ronda)
-     #   self.assertEqual(resultado, 15+14+7)
+    def test_partida_con_dos_spare_juntos(self):
+        partida = Bolos()
+        ronda = [(4, 6), (5, 5), (4, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 15+14+7)
 
-    #def test_partida_con_strike_spare_seguidos(self):
-        #partida = Bolos()
-        #ronda = [(10, 0), (5, 5), (6, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-        #resultado = partida.calcularpuntuacion(ronda)
-       # self.assertEqual(resultado, 20+16+9)
+    def test_partida_con_strike_spare_seguidos(self):
+        partida = Bolos()
+        ronda = [(10, 0), (5, 5), (6, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 20+16+9)
+
+    def test_partida_con_strike_strike_spare(self):
+        partida = Bolos()
+        ronda = [(10, 0), (10, 0), (6, 4), (5, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 26+20+15+6)
+
+
 
   #  def test_partida_con_spare_strike_spare(self):
    #     partida = Bolos()
