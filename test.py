@@ -87,6 +87,26 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(resultado, 30+30+30+22+13+3)
 
+   # def test_partida_con_ronda_extra(self):
+    #    partida = Bolos()
+     #   ronda = [(10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (2, 1), (0, 0), (0, 0), (0, 0), (5, 5), (4, 5)]
+      #  resultado = partida.calcularpuntuacion(ronda)
+       # self.assertEqual(resultado, 30+30+30+22+13+3+14)
+
+    def test_partida_con_rondas_extra(self):
+        partida = Bolos()
+        ronda = [(10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (2, 1), (0, 0), (0, 0), (0, 0), (10, 0), (10, 0), (10, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 30+30+30+22+13+3+30)
+
+    def test_partida_perfecta(self):
+        partida = Bolos()
+        ronda = [(10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0), (10, 0)]
+        resultado = partida.calcularpuntuacion(ronda)
+        self.assertEqual(resultado, 300)
+
+
+
 
 
 
