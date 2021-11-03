@@ -14,11 +14,11 @@ class Bolos:
                             suma = suma + sum(ronda[i]) + ronda[i+1][0]
                         else:
                             suma = suma + sum(ronda[i])
-                    elif i == 9 and sum(ronda[i]) != 10:
+                    elif i == 9:
                         suma = suma + sum(ronda[i])
                     else:
                         if sum(ronda[9]) == 10 and ronda[9][0] != 10:
-                            suma = suma + sum(ronda[9 + 1][0])
+                            suma = suma + ronda[9 + 1][0]
                         else:
                             suma = suma + sum(ronda[i])
 
