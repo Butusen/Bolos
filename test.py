@@ -1,5 +1,5 @@
 import unittest
-from Bolos import Bolos
+from Bolos import Bolos, Bolosincorrectos,RondasdeMas,Letrasno
 
 
 class MyTestCase(unittest.TestCase):
@@ -111,39 +111,53 @@ class MyTestCase(unittest.TestCase):
         resultado = partida.calcularpuntuacion(ronda)
         self.assertEqual(15,resultado)
 
+    def test_excepcion_mayor10(self):
+        partida = Bolos()
+        ronda = [(11, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5)]
+        try:
+            partida.excepcion_mayor10(ronda)
+        except Bolosincorrectos:
+            pass
+        else:
+            self.fail("mierda")
+    def test_excepcion_negativos(self):
+        partida = Bolos()
+        ronda = [(-1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5)]
+        try:
+            partida.excepcion_negativos(ronda)
+        except Bolosincorrectos:
+            pass
+        else:
+            self.fail("mierda")
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def test_demasiadas_rondas(self):
+        partida = Bolos()
+        ronda = [(10, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (3,0),(3,0), (3,0), (3,0)]
+        try:
+            partida.demasiadasrondas(ronda)
+        except RondasdeMas:
+            pass
+        else:
+            self.fail("caca")
+    def test_sumamuyalta(self):
+        partida = Bolos()
+        ronda = [(10, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5)]
+        try:
+            partida.sumamuyalta(ronda)
+        except Bolosincorrectos:
+            pass
+        else:
+            self.fail("caca")
+    def test_letrasNo(self):
+        partida = Bolos()
+        ronda = [(10, 0), (0, 0), (0, 'a'), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5)]
+        try:
+            partida.letrasno(ronda)
+        except Letrasno:
+            pass
+        else:
+            self.fail("caca")
 
 
 if __name__ == '__main__':
