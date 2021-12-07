@@ -1,3 +1,4 @@
+
 class Bolos:
     def excepcion_mayor10(self, ronda):
         for i in range(0, len(ronda)):
@@ -43,6 +44,14 @@ class Bolos:
             return suma
         except:
             print("error")
+
+    def ganadorPartida(self,jugador1,jugador2):
+        if jugador1 > jugador2:
+            return jugador1
+        elif jugador2 > jugador1:
+            return jugador2
+        elif jugador2 == jugador1:
+            return "Empate"
 
 class Bolosincorrectos(Exception):
     pass

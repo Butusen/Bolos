@@ -158,6 +158,32 @@ class MyTestCase(unittest.TestCase):
             pass
         else:
             self.fail("caca")
+    def test_partida_gana_2(self):
+        partida= Bolos()
+        ronda1 = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        ronda2 = [(4, 5), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        jugador1 = partida.calcularpuntuacion(ronda1)
+        jugador2 = partida.calcularpuntuacion(ronda2)
+        ganador = partida.ganadorPartida(jugador1,jugador2)
+        self.assertEqual(jugador2,ganador)
+
+    def test_partida_gana_1(self):
+        partida = Bolos()
+        ronda1 = [(6, 4), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        ronda2 = [(4, 5), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        jugador1 = partida.calcularpuntuacion(ronda1)
+        jugador2 = partida.calcularpuntuacion(ronda2)
+        ganador = partida.ganadorPartida(jugador1, jugador2)
+        self.assertEqual(jugador1, ganador)
+
+    def test_partida_empate(self):
+        partida = Bolos()
+        ronda1 = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        ronda2 = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (5, 5), (5, 2)]
+        jugador1 = partida.calcularpuntuacion(ronda1)
+        jugador2 = partida.calcularpuntuacion(ronda2)
+        ganador = partida.ganadorPartida(jugador1, jugador2)
+        self.assertEqual("Empate", ganador)
 
 
 if __name__ == '__main__':
